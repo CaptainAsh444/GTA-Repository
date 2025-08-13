@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.SceneComponent
+using UnityEngine.SceneManagement;
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
     private void Start()
@@ -14,8 +14,8 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
 
     }
-    public override void OnJoinedLobby();
+    public override void OnJoinedLobby()
     {
-
+        SceneManager.LoadScene("Lobby");
     }
 }
