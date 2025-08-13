@@ -17,13 +17,14 @@ sky = SubResource("Sky_cv6ia")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.64741, 0)
+use_collision = true
 size = Vector3(11.7949, 1, 8.38086)
 
 [node name="player" parent="." instance=ExtResource("1_1w2rp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00189245, 0, 0.452939)
 speed = 100
-gravity = -100
-jumpHeight = 10
+gravity = -50
+jumpHeight = 20
 sens = -0.01
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
