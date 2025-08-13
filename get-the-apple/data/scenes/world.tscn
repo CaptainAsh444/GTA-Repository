@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=7 format=3 uid="uid://cvr4wjawqjv0e"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://cvr4wjawqjv0e"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=12 format=3 uid="uid://cvr4wjawqjv0e"]
 >>>>>>> Stashed changes
@@ -7,6 +11,36 @@
 [ext_resource type="PackedScene" uid="uid://ksbrnp203vgm" path="res://data/scenes/player.tscn" id="1_1w2rp"]
 [ext_resource type="Texture2D" uid="uid://cl0vo48b7eil0" path="res://assets/kloppenheim_06_puresky_4k.exr" id="2_c8ggi"]
 [ext_resource type="PackedScene" uid="uid://cmlyjc2trp2bq" path="res://data/scenes/multiplayer_ui.tscn" id="3_wtkja"]
+
+[sub_resource type="Gradient" id="Gradient_c8ggi"]
+offsets = PackedFloat32Array(0, 0.69403, 1)
+colors = PackedColorArray(0.107078, 0.215427, 0.22083, 1, 0.304191, 0.482302, 0.147566, 1, 0.378895, 0.456749, 0.161137, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wtkja"]
+frequency = 0.0175
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cv6ia"]
+seamless = true
+color_ramp = SubResource("Gradient_c8ggi")
+noise = SubResource("FastNoiseLite_wtkja")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t61oy"]
+frequency = 0.013
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0sfef"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_t61oy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i50uo"]
+albedo_texture = SubResource("NoiseTexture2D_cv6ia")
+normal_enabled = true
+normal_scale = 10.7
+normal_texture = SubResource("NoiseTexture2D_0sfef")
+uv1_scale = Vector3(0.32, 0.32, 0.32)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 3.4822
+uv1_world_triplanar = true
 
 [sub_resource type="Gradient" id="Gradient_c8ggi"]
 offsets = PackedFloat32Array(0, 0.69403, 1)
