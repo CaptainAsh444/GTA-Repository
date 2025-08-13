@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvr4wjawqjv0e"]
+[gd_scene load_steps=8 format=3 uid="uid://cvr4wjawqjv0e"]
 
 [ext_resource type="PackedScene" uid="uid://ksbrnp203vgm" path="res://data/scenes/player.tscn" id="1_1w2rp"]
+[ext_resource type="Script" uid="uid://1r5qelb8hhj6" path="res://data/scenes/world.gd" id="1_cv6ia"]
 [ext_resource type="Texture2D" uid="uid://cl0vo48b7eil0" path="res://assets/kloppenheim_06_puresky_4k.exr" id="2_c8ggi"]
 [ext_resource type="PackedScene" uid="uid://cmlyjc2trp2bq" path="res://data/scenes/multiplayer_ui.tscn" id="3_wtkja"]
 
@@ -15,6 +16,7 @@ background_mode = 2
 sky = SubResource("Sky_cv6ia")
 
 [node name="Stuff" type="Node3D"]
+script = ExtResource("1_cv6ia")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.64741, 0)
