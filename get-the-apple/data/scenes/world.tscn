@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvr4wjawqjv0e"]
+
+[ext_resource type="PackedScene" uid="uid://ksbrnp203vgm" path="res://data/scenes/player.tscn" id="1_1w2rp"]
+[ext_resource type="Texture2D" uid="uid://cl0vo48b7eil0" path="res://assets/kloppenheim_06_puresky_4k.exr" id="2_c8ggi"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wtkja"]
+panorama = ExtResource("2_c8ggi")
+
+[sub_resource type="Sky" id="Sky_cv6ia"]
+sky_material = SubResource("PanoramaSkyMaterial_wtkja")
+
+[sub_resource type="Environment" id="Environment_t61oy"]
+background_mode = 2
+sky = SubResource("Sky_cv6ia")
+
+[node name="Stuff" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.64741, 0)
+size = Vector3(11.7949, 1, 8.38086)
+
+[node name="player" parent="." instance=ExtResource("1_1w2rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00189245, 0, 0.452939)
+speed = 100
+gravity = -100
+jumpHeight = 10
+sens = -0.01
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.434398, 0.900721, 0, -0.900721, 0.434398, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t61oy")
